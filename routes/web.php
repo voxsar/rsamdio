@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 
-Route::redirect('/', 'districts')
+Route::redirect('/', 'districts');
 
 //group middleware auth verified function
 Route::middleware(['auth', 'verified'])->group(function () {
