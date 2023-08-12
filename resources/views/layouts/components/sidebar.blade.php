@@ -5,7 +5,7 @@
 			<a href="#">
 				<img src="{{asset('images/avatars/avatar.png')}}">
 				<span class="activity-indicator"></span>
-				<span class="user-info-text">{{auth()->name}}</span>
+				<span class="user-info-text">{{auth()->user()->name}}</span>
 			</a>
 		</div>
 	</div>
