@@ -1,5 +1,5 @@
 @extends("layouts.index")
-@section('page')
+@section('content')
 <form action="">
 	
 </form>
