@@ -20,7 +20,11 @@ Route::get('/', function () {
 
 //group middleware auth verified function
 Route::middleware(['auth', 'verified'])->group(function () {
-    
+    Route::resource('districts', DistrictController::class);
+    Route::resource('districts.pdrrs', DistrictPDRRController::class);
+    Route::resource('reports', QuarterlyReportController::class);
+    Route::resource('reports.dp', QuarterlyReportDPController::class);
+    Route::resource('reports.cp', QuarterlyReportCPController::class);
 });
 
 Route::get('/dashboard', function () {

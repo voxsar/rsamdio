@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreDistrictPDRRRequest;
 use App\Http\Requests\UpdateDistrictPDRRRequest;
+use App\Models\District;
 use App\Models\DistrictPDRR;
 
 class DistrictPDRRController extends Controller
@@ -11,7 +12,7 @@ class DistrictPDRRController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(District $district)
     {
         //
     }
@@ -19,7 +20,7 @@ class DistrictPDRRController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(District $district)
     {
         //
     }
@@ -27,7 +28,7 @@ class DistrictPDRRController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreDistrictPDRRRequest $request)
+    public function store(District $district, StoreDistrictPDRRRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class DistrictPDRRController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(DistrictPDRR $districtPDRR)
+    public function show(District $district, DistrictPDRR $districtPDRR)
     {
         //
     }
@@ -43,7 +44,7 @@ class DistrictPDRRController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(DistrictPDRR $districtPDRR)
+    public function edit(District $district, DistrictPDRR $districtPDRR)
     {
         //
     }
@@ -51,7 +52,7 @@ class DistrictPDRRController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateDistrictPDRRRequest $request, DistrictPDRR $districtPDRR)
+    public function update(District $district, UpdateDistrictPDRRRequest $request, DistrictPDRR $districtPDRR)
     {
         //
     }

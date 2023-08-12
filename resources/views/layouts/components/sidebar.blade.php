@@ -12,48 +12,13 @@
 	<div class="app-menu">
 		<ul class="accordion-menu">
 			<li class="sidebar-title">
-				Reports
+				Dashboard
 			</li>
 			<li>
-				<a href="index.html"><i class="material-icons-two-tone">dashboard</i>Dashboard</a>
+				<a href=""><i class="material-icons-two-tone">dashboard</i>District Profile</a>
 			</li>
 			<li>
-				<a href="mailbox.html"><i class="material-icons-two-tone">inbox</i>Mailbox<span class="badge rounded-pill badge-danger float-end">87</span></a>
-			</li>
-
-			<li>
-				<a href=""><i class="material-icons-two-tone">star</i>Pages<i class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
-				<ul class="sub-menu">
-					<li>
-						<a href="pricing.html">Pricing</a>
-					</li>
-					<li>
-						<a href="invoice.html">Invoice</a>
-					</li>
-					<li>
-						<a href="settings.html">Settings</a>
-					</li>
-					<li>
-						<a href="#">Authentication<i class="material-icons has-sub-menu">keyboard_arrow_right</i></a>
-						<ul class="sub-menu">
-							<li>
-								<a href="sign-in.html">Sign In</a>
-							</li>
-							<li>
-								<a href="sign-up.html">Sign Up</a>
-							</li>
-							<li>
-								<a href="lock-screen.html">Lock Screen</a>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<a href="error.html">Error</a>
-					</li>
-				</ul>
-			</li>
-			<li class="sidebar-title">
-				Settings
+				<a href=""><i class="material-icons-two-tone">inbox</i>Quarterly Reports<span class="badge rounded-pill badge-danger float-end"></span></a>
 			</li>
 		</ul>
 	</div>
