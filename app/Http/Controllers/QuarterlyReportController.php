@@ -24,6 +24,7 @@ class QuarterlyReportController extends Controller
     public function create()
     {
         //
+        return view('reports.create');
     }
 
     /**
