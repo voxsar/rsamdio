@@ -20,11 +20,11 @@ Route::get('/', function () {
 
 //group middleware auth verified function
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::resource('districts', DistrictController::class);
-    Route::resource('districts.pdrrs', DistrictPDRRController::class);
-    Route::resource('reports', QuarterlyReportController::class);
-    Route::resource('reports.dp', QuarterlyReportDPController::class);
-    Route::resource('reports.cp', QuarterlyReportCPController::class);
+    Route::resource('districts', App\Http\Controllers\DistrictController::class);
+    Route::resource('districts.pdrrs', App\Http\Controllers\DistrictPDRRController::class);
+    Route::resource('reports', App\Http\Controllers\QuarterlyReportController::class);
+    Route::resource('reports.dp', App\Http\Controllers\QuarterlyReportDPController::class);
+    Route::resource('reports.cp', App\Http\Controllers\QuarterlyReportCPController::class);
 });
 
 Route::get('/dashboard', function () {
