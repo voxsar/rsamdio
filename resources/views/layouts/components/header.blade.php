@@ -23,8 +23,6 @@
 				<li class="nav-item">
 					<a class="nav-link toggle-search" href="#"><i class="material-icons">search</i></a>
 				</li>
-				@include('layouts.components.languages')
-				@include('layouts.components.notifications')
 			</ul>
 		</div>
 	</div>
