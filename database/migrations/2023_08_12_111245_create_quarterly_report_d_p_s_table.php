@@ -25,6 +25,8 @@ return new class extends Migration
             $table->string('income')->nullable();
             //expenditure
             $table->string('expense')->nullable();
+            //project images array
+            $table->json('project_images')->nullable();
             //link quarterly_reports
             $table->foreignId('quarterly_report_id');
             $table->timestamps();

@@ -18,7 +18,6 @@
 				<div class="card-body">
 					<div class="row">
 						<div class="col-md-6">
-							Show errors here
 							@foreach ($errors->all() as $error)
 								<div class="alert alert-danger">{{ $error }}</div>
 							@endforeach
@@ -28,25 +27,25 @@
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="exampleInputEmail1" class="form-label">Total Rotaract Clubs</label>
-                                    <input type="text" name="total_rotaract_clubs" class="form-control" aria-describedby="emailHelp" required>
+                                    <label  class="form-label">Total Rotaract Clubs</label>
+                                    <input type="text" name="total_rotaract_clubs" class="form-control" required>
                                     <div class="form-text"></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="exampleInputEmail1" class="form-label">Total Rotaract Clubs</label>
-                                    <input type="text" name="total_rotaractors" class="form-control" aria-describedby="emailHelp" required>
+                                    <label  class="form-label">Total Rotaract Clubs</label>
+                                    <input type="text" name="total_rotaractors" class="form-control" required>
                                     <div class="form-text"></div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="exampleInputEmail1" class="form-label">Total Charter Clubs</label>
-                                    <input type="text" name="total_charter_clubs" class="form-control" aria-describedby="emailHelp" required>
+                                    <label  class="form-label">Total Charter Clubs</label>
+                                    <input type="text" name="total_charter_clubs" class="form-control" required>
                                     <div class="form-text"></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="exampleInputEmail1" class="form-label">Total New Rotaract</label>
-                                    <input type="text" name="total_new_rotaractors" class="form-control" aria-describedby="emailHelp" required>
+                                    <label  class="form-label">Total New Rotaract</label>
+                                    <input type="text" name="total_new_rotaractors" class="form-control" required>
                                     <div class="form-text"></div>
                                 </div>
                             </div>
@@ -54,37 +53,37 @@
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="exampleInputEmail1" class="form-label">Total Club Service Projects</label>
-                                    <input type="text" name="total_club_service_projects" class="form-control" aria-describedby="emailHelp" required>
+                                    <label  class="form-label">Total Club Service Projects</label>
+                                    <input type="text" name="total_club_service_projects" class="form-control" required>
                                     <div class="form-text"></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="exampleInputEmail1" class="form-label">Total Community Service Projects</label>
-                                    <input type="text" name="total_community_service_projects" class="form-control" aria-describedby="emailHelp" required>
-                                    <div class="form-text"></div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="exampleInputEmail1" class="form-label">Total International Service Projects</label>
-                                    <input type="text" name="total_international_service_projects" class="form-control" aria-describedby="emailHelp" required>
-                                    <div class="form-text"></div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="exampleInputEmail1" class="form-label">Total Professional Development Service Projects</label>
-                                    <input type="text" name="total_professional_development_service_projects" class="form-control" aria-describedby="emailHelp" required>
+                                    <label  class="form-label">Total Community Service Projects</label>
+                                    <input type="text" name="total_community_service_projects" class="form-control" required>
                                     <div class="form-text"></div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="exampleInputEmail1" class="form-label">Total Other Service Projects</label>
-                                    <input type="text" name="total_other_service_projects" class="form-control" aria-describedby="emailHelp" required>
+                                    <label  class="form-label">Total International Service Projects</label>
+                                    <input type="text" name="total_international_service_projects" class="form-control" required>
                                     <div class="form-text"></div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="exampleInputEmail1" class="form-label">District Newsletter Link</label>
-                                    <input type="url" name="district_newsletter_link" class="form-control" aria-describedby="emailHelp" required>
+                                    <label  class="form-label">Total Professional Development Service Projects</label>
+                                    <input type="text" name="total_professional_development_service_projects" class="form-control" required>
+                                    <div class="form-text"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label  class="form-label">Total Other Service Projects</label>
+                                    <input type="text" name="total_other_service_projects" class="form-control" required>
+                                    <div class="form-text"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label  class="form-label">District Newsletter Link</label>
+                                    <input type="url" name="district_newsletter_link" class="form-control" required>
                                     <div class="form-text"></div>
                                 </div>
                             </div>

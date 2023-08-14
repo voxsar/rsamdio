@@ -11,27 +11,27 @@
 					<div class="card-body">
 						<div class="row">
 							<div class="col-md-12">
-								<label for="exampleInputEmail1" class="form-label">District Number</label>
-								<input type="text" name="district_number" value="{{auth()->user()->district->district_number}}" class="form-control" aria-describedby="emailHelp" required>
+								<label  class="form-label">District Number</label>
+								<input type="text" name="district_number" value="{{auth()->user()->district->district_number}}" class="form-control" required>
 								<div class="form-text"></div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
-								<label for="exampleInputEmail1" class="form-label">DRR Name</label>
-								<input type="text" name="drr_name" value="{{auth()->user()->district->drr_name}}" class="form-control" aria-describedby="emailHelp" required>
+								<label  class="form-label">DRR Name</label>
+								<input type="text" name="drr_name" value="{{auth()->user()->district->drr_name}}" class="form-control" required>
 								<div class="form-text"></div>
 							</div>
 							<div class="col-md-6">
-								<label for="exampleInputEmail1" class="form-label">DRS Name</label>
-								<input type="text" name="drs_name" value="{{auth()->user()->district->drs_name}}" class="form-control" aria-describedby="emailHelp" required>
+								<label  class="form-label">DRS Name</label>
+								<input type="text" name="drs_name" value="{{auth()->user()->district->drs_name}}" class="form-control" required>
 								<div class="form-text"></div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
-								<label for="exampleInputEmail1" class="form-label">Description</label>
-								<textarea type="text" name="description" class="form-control" aria-describedby="emailHelp" required>{{auth()->user()->district->description}}</textarea>
+								<label  class="form-label">Description</label>
+								<textarea type="text" name="description" class="form-control" required>{{auth()->user()->district->description}}</textarea>
 								<div class="form-text"></div>
 							</div>
 						</div>
@@ -54,13 +54,13 @@
 				<div class="card-body">
 					<div class="row">
 						<div class="col-md-6">
-							<label for="exampleInputEmail1" class="form-label">Profile Photo</label>
-							<input type="file" class="form-control" aria-describedby="emailHelp">
+							<label  class="form-label">Profile Photo</label>
+							<input type="file" class="form-control">
 							<div class="form-text"></div>
 						</div>
 						<div class="col-md-6">
-							<label for="exampleInputEmail1" class="form-label">Cover Photo</label>
-							<input type="file" class="form-control" aria-describedby="emailHelp">
+							<label  class="form-label">Cover Photo</label>
+							<input type="file" class="form-control">
 							<div class="form-text"></div>
 						</div>
 					</div>
@@ -87,17 +87,17 @@
 						@forelse ($pdrrs as $pdrrrow)
 							<div class="row">
 								<div class="col-md-4">
-									<label for="exampleInputEmail1" class="form-label">Name</label><br/>
-									<h4 for="exampleInputEmail1">{{$pdrrrow->name}}</h4>
+									<label  class="form-label">Name</label><br/>
+									<h4 >{{$pdrrrow->name}}</h4>
 									<div class="form-text"></div>
 								</div>
 								<div class="col-md-4">
-									<label for="exampleInputEmail1" class="form-label">Year</label><br/>
-									<h4 for="exampleInputEmail1">{{$pdrrrow->year}}</h4>
+									<label  class="form-label">Year</label><br/>
+									<h4 >{{$pdrrrow->year}}</h4>
 									<div class="form-text"></div>
 								</div>
 								<div class="col-md-2">
-									<label for="exampleInputEmail1" class="form-label">Picture</label>
+									<label  class="form-label">Picture</label>
 									<img class="img-fluid" src="{{$pdrrrow->image}}" alt="" width="100%">
 									<div class="form-text"></div>
 								</div>
@@ -116,18 +116,18 @@
 						@csrf()
 						<div class="row">
 							<div class="col-md-6">
-								<label for="exampleInputEmail1" class="form-label">Name</label>
-								<input type="text" class="form-control" name="name" aria-describedby="emailHelp">
+								<label  class="form-label">Name</label>
+								<input type="text" class="form-control" name="name">
 								<div class="form-text"></div>
 							</div>
 							<div class="col-md-4">
-								<label for="exampleInputEmail1" class="form-label">Year</label>
-								<input type="text" class="form-control" name="year" aria-describedby="emailHelp">
+								<label  class="form-label">Year</label>
+								<input type="text" class="form-control" name="year">
 								<div class="form-text"></div>
 							</div>
 							<div class="col-md-2">
-								<label for="exampleInputEmail1" class="form-label">Picture</label>
-								<input type="file" class="form-control" name="image" aria-describedby="emailHelp">
+								<label  class="form-label">Picture</label>
+								<input type="file" class="form-control" name="image">
 								<div class="form-text"></div>
 							</div>
 						</div>

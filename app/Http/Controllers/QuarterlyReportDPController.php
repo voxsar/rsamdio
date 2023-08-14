@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreQuarterlyReportDPRequest;
 use App\Http\Requests\UpdateQuarterlyReportDPRequest;
+use App\Models\QuarterlyReport;
 use App\Models\QuarterlyReportDP;
 
 class QuarterlyReportDPController extends Controller
@@ -11,7 +12,7 @@ class QuarterlyReportDPController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(QuarterlyReport $report)
     {
         //
     }
@@ -19,23 +20,34 @@ class QuarterlyReportDPController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(QuarterlyReport $report)
     {
         //
+        return view('reports.dp.create', compact('report'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreQuarterlyReportDPRequest $request)
+    public function store(QuarterlyReport $report, StoreQuarterlyReportDPRequest $request)
     {
         //
+        $dp = new QuarterlyReportDP();
+        $dp->quarterly_report_id = $report->id;
+        $dp->avenue_of_service = $request->avenue_of_service;
+        $dp->area_of_focus = $request->area_of_focus;
+        $dp->project_name = $request->project_name;
+        $dp->project_description = $request->project_description;
+        $dp->income = $request->income;
+        $dp->expense = $request->expense;
+        $dp->save();
+        return back();
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(QuarterlyReportDP $quarterlyReportDP)
+    public function show(QuarterlyReport $report, QuarterlyReportDP $dp)
     {
         //
     }
@@ -43,7 +55,7 @@ class QuarterlyReportDPController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(QuarterlyReportDP $quarterlyReportDP)
+    public function edit(QuarterlyReport $report, QuarterlyReportDP $dp)
     {
         //
     }
@@ -51,16 +63,27 @@ class QuarterlyReportDPController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateQuarterlyReportDPRequest $request, QuarterlyReportDP $quarterlyReportDP)
+    public function update(UpdateQuarterlyReportDPRequest $request, QuarterlyReport $report, QuarterlyReportDP $dp)
     {
         //
+        $dp->quarterly_report_id = $report->id;
+        $dp->avenue_of_service = $request->avenue_of_service;
+        $dp->area_of_focus = $request->area_of_focus;
+        $dp->project_name = $request->project_name;
+        $dp->project_description = $request->project_description;
+        $dp->income = $request->income;
+        $dp->expense = $request->expense;
+        $dp->save();
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(QuarterlyReportDP $quarterlyReportDP)
+    public function destroy(QuarterlyReport $report, QuarterlyReportDP $dp)
     {
         //
+        $dp->delete();
+        return back();
     }
 }

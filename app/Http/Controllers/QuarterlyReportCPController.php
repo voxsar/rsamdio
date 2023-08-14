@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreQuarterlyReportCPRequest;
 use App\Http\Requests\UpdateQuarterlyReportCPRequest;
+use App\Models\QuarterlyReport;
 use App\Models\QuarterlyReportCP;
 
 class QuarterlyReportCPController extends Controller
@@ -11,7 +12,7 @@ class QuarterlyReportCPController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(QuarterlyReport $report)
     {
         //
     }
@@ -19,23 +20,34 @@ class QuarterlyReportCPController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(QuarterlyReport $report)
     {
         //
+        return view('reports.cp.create', compact('report'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreQuarterlyReportCPRequest $request)
+    public function store(QuarterlyReport $report, StoreQuarterlyReportCPRequest $request)
     {
         //
+        $cp = new QuarterlyReportCP();
+        $cp->quarterly_report_id = $report->id;
+        $cp->avenue_of_service = $request->avenue_of_service;
+        $cp->area_of_focus = $request->area_of_focus;
+        $cp->project_name = $request->project_name;
+        $cp->project_description = $request->project_description;
+        $cp->income = $request->income;
+        $cp->expense = $request->expense;
+        $cp->save();
+        return back();
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(QuarterlyReportCP $quarterlyReportCP)
+    public function show(QuarterlyReport $report, QuarterlyReportCP $cp)
     {
         //
     }
@@ -43,7 +55,7 @@ class QuarterlyReportCPController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(QuarterlyReportCP $quarterlyReportCP)
+    public function edit(QuarterlyReport $report, QuarterlyReportCP $cp)
     {
         //
     }
@@ -51,16 +63,27 @@ class QuarterlyReportCPController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateQuarterlyReportCPRequest $request, QuarterlyReportCP $quarterlyReportCP)
+    public function update(UpdateQuarterlyReportCPRequest $request, QuarterlyReport $report, QuarterlyReportCP $cp)
     {
         //
+        $cp->quarterly_report_id = $report->id;
+        $cp->avenue_of_service = $request->avenue_of_service;
+        $cp->area_of_focus = $request->area_of_focus;
+        $cp->project_name = $request->project_name;
+        $cp->project_description = $request->project_description;
+        $cp->income = $request->income;
+        $cp->expense = $request->expense;
+        $cp->save();
+        return back();
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(QuarterlyReportCP $quarterlyReportCP)
+    public function destroy(QuarterlyReport $report, QuarterlyReportCP $cp)
     {
         //
+        $cp->delete();
+        return back();
     }
 }

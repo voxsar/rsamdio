@@ -73,6 +73,7 @@
 		<script src="{{asset('js/main.min.js')}}"></script>
 		<script src="{{asset('js/custom.js')}}"></script>
 		<script src="{{asset('js/pages/datatables.js')}}"></script>
+		@stack('scripts')
 	</body>
 
 </html>

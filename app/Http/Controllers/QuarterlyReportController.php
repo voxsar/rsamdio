@@ -50,7 +50,7 @@ class QuarterlyReportController extends Controller
         $quarterlyReport->district_newsletter_link = $request->district_newsletter_link;
         $quarterlyReport->district_id = auth()->user()->district->id;
         $quarterlyReport->save();
-        return redirect()->route('reports.index');
+        return redirect()->route('reports.edit', $quarterlyReport);
     }
 
     /**
@@ -59,7 +59,7 @@ class QuarterlyReportController extends Controller
     public function show(QuarterlyReport $report)
     {
         //
-        return view('reports.edit', compact('report'));
+        return view('reports.show', compact('report'));
     }
 
     /**

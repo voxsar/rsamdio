@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('quarterly_reports', function (Blueprint $table) {
             $table->id();
+            //quarter
+            $table->string('quarter')->nullable();
+            //status
+            $table->string('status')->nullable()->default('pending');//submitted, pending
             //total rotaract clubs
             $table->string('total_rotaract_clubs')->nullable();
             //total rotaractors

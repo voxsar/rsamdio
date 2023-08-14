@@ -11,7 +11,7 @@ class UpdateQuarterlyReportDPRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,14 @@ class UpdateQuarterlyReportDPRequest extends FormRequest
     {
         return [
             //
+            'avenue_of_service' => 'required',
+            'area_of_focus' => 'required',
+            'project_name' => 'required',
+            'project_description' => 'required',
+            'income' => 'required',
+            'expense' => 'required',
+            'project_images' => 'required|array|min:1',
+            'project_images.*' => 'required',
         ];
     }
 }
