@@ -12,26 +12,26 @@
 						<div class="row">
 							<div class="col-md-12">
 								<label for="exampleInputEmail1" class="form-label">District Number</label>
-								<input type="text" name="district_number" class="form-control" aria-describedby="emailHelp" required>
+								<input type="text" name="district_number" value="{{auth()->user()->district->district_number}}" class="form-control" aria-describedby="emailHelp" required>
 								<div class="form-text"></div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<label for="exampleInputEmail1" class="form-label">DRR Name</label>
-								<input type="text" name="drr_name" class="form-control" aria-describedby="emailHelp" required>
+								<input type="text" name="drr_name" value="{{auth()->user()->district->drr_name}}" class="form-control" aria-describedby="emailHelp" required>
 								<div class="form-text"></div>
 							</div>
 							<div class="col-md-6">
 								<label for="exampleInputEmail1" class="form-label">DRS Name</label>
-								<input type="text" name="drs_name" class="form-control" aria-describedby="emailHelp" required>
+								<input type="text" name="drs_name" value="{{auth()->user()->district->drs_name}}" class="form-control" aria-describedby="emailHelp" required>
 								<div class="form-text"></div>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-12">
 								<label for="exampleInputEmail1" class="form-label">Description</label>
-								<textarea type="text" name="description" class="form-control" aria-describedby="emailHelp" required></textarea>
+								<textarea type="text" name="description" class="form-control" aria-describedby="emailHelp" required>{{auth()->user()->district->description}}</textarea>
 								<div class="form-text"></div>
 							</div>
 						</div>

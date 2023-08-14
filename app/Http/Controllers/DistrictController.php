@@ -84,6 +84,7 @@ class DistrictController extends Controller
     public function show(District $district)
     {
         //
+        return view('districts.edit', compact('district'));
     }
 
     /**
@@ -92,6 +93,7 @@ class DistrictController extends Controller
     public function edit(District $district)
     {
         //
+        return view('districts.edit', compact('district'));
     }
 
     /**
@@ -100,6 +102,31 @@ class DistrictController extends Controller
     public function update(UpdateDistrictRequest $request, District $district)
     {
         //
+        $district->district_number = $request->district_number;
+        $district->drr_name = $request->drr_name;
+        $district->drs_name = $request->drs_name;
+        $district->description = $request->description;
+        $district->save();
+
+        $user1 = User::where('email', $request->drremail)->first();
+        if(isset($user1)) {
+            $user1->name = $request->drr_name;
+            $user1->email = $request->drremail;
+            $user1->password = bcrypt($request->drrpassword);
+            $user1->district_id = $district->id;
+            $user1->save();
+        }
+
+        $user2 = User::where('email', $request->drsemail)->first();
+        if(isset($user2)) {
+            $user2->name = $request->drs_name;
+            $user2->email = $request->drsemail;
+            $user2->password = bcrypt($request->drspassword);
+            $user2->district_id = $district->id;
+            $user2->save();
+        }
+
+        return redirect()->route('districts.index');
     }
 
     /**
@@ -108,5 +135,7 @@ class DistrictController extends Controller
     public function destroy(District $district)
     {
         //
+        $district->delete();
+        return redirect()->route('districts.index');
     }
 }

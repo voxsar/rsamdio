@@ -1,9 +1,7 @@
 <div class="app-sidebar">
 	<div class="logo">
-		<a href="" class="logo-icon"><span class="logo-text">Neptune</span></a>
 		<div class="sidebar-user-switcher user-activity-online">
 			<a href="#">
-				<img src="{{asset('images/avatars/avatar.png')}}">
 				<span class="activity-indicator"></span>
 				<span class="user-info-text">{{auth()->user()->name}}</span>
 			</a>
@@ -19,6 +17,9 @@
 			</li>
 			<li>
 				<a href="{{route('reports.index')}}"><i class="material-icons-two-tone">dashboard</i>My Quarterly Reports<span class="badge rounded-pill badge-danger float-end"></span></a>
+			</li>
+			<li>
+				<a href="{{route('reports.create')}}"><i class="material-icons-two-tone">add</i>Add Quarterly Report<span class="badge rounded-pill badge-danger float-end"></span></a>
 			</li>
 			@auth()
 				@if(auth()->user()->user_type == 'admin')

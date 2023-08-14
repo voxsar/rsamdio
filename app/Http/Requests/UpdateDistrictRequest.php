@@ -11,7 +11,7 @@ class UpdateDistrictRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,16 @@ class UpdateDistrictRequest extends FormRequest
     {
         return [
             //
+            'district_number' => 'required',
+            'drr_name' => 'required',
+            'drs_name' => 'required',
+            'description' => 'required',
+            
+            /*
+            'drremail' => 'email',
+            'drrpassword' => 'min:8|confirmed',
+            'drsemail' => 'email',
+            'drspassword' => 'min:8|confirmed',*/
         ];
     }
 }
