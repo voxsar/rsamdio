@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class QuarterlyReportDP extends Model
 {
     use HasFactory;
+
+    public function report()
+    {
+        return $this->belongsTo(QuarterlyReport::class);
+    }
 }

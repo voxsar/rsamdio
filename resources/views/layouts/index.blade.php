@@ -21,6 +21,7 @@
 		<link href="{{asset('plugins/perfectscroll/perfect-scrollbar.css')}}" rel="stylesheet">
 		<link href="{{asset('plugins/pace/pace.css')}}" rel="stylesheet">
 		<link href="{{asset('plugins/highlight/styles/github-gist.css')}}" rel="stylesheet">
+		<link href="{{asset('plugins/datatables/datatables.min.css')}}" rel="stylesheet">
 
 
 		<!-- Theme Styles -->
@@ -68,8 +69,10 @@
 		<script src="{{asset('plugins/perfectscroll/perfect-scrollbar.min.js')}}"></script>
 		<script src="{{asset('plugins/pace/pace.min.js')}}"></script>
 		<script src="{{asset('plugins/highlight/highlight.pack.js')}}"></script>
+    	<script src="{{asset('plugins/datatables/datatables.min.js')}}"></script>
 		<script src="{{asset('js/main.min.js')}}"></script>
 		<script src="{{asset('js/custom.js')}}"></script>
+		<script src="{{asset('js/pages/datatables.js')}}"></script>
 	</body>
 
 </html>

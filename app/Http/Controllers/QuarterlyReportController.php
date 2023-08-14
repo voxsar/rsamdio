@@ -14,8 +14,11 @@ class QuarterlyReportController extends Controller
     public function index()
     {
         //
-        
-        return view('reports.index');
+        $reports = auth()->user()->district->reports;
+        $data = [
+            'reports' => $reports
+        ];
+        return view('reports.index', $data);
     }
 
     /**

@@ -14,9 +14,20 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        //create a district
+        \App\Models\District::factory()->create([
+            'district_number' => '3220',
+            'drr_name' => 'Ahamed',
+            'drs_name' => 'Danica',
+            'description' => 'Wonderful 3220'
+        ]);
+
+        \App\Models\User::factory()->create([
+             'name' => 'Super Admin',
+             'email' => 'ahamed@rsamdio.org',
+             'password' => bcrypt('password'),
+             'user_type' => 'admin',
+             'district_id' => 1,
+        ]);
     }
 }

@@ -11,7 +11,7 @@ class StoreDistrictRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,16 @@ class StoreDistrictRequest extends FormRequest
     {
         return [
             //
+            'district_number' => 'required',
+            'drr_name' => 'required',
+            'drs_name' => 'required',
+            'description' => 'required',
+
+            'drremail' => 'required|email|unique:users,email',
+            'drrpassword' => 'required|min:8|confirmed',
+            'drsemail' => 'required|email|unique:users,email',
+            'drspassword' => 'required|min:8|confirmed',
+
         ];
     }
 }

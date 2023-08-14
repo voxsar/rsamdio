@@ -31,6 +31,15 @@ class DistrictPDRRController extends Controller
     public function store(District $district, StoreDistrictPDRRRequest $request)
     {
         //
+        $districtpdrr = new DistrictPDRR();
+        $districtpdrr->district_id = $district->id;
+        $districtpdrr->name = $request->name;
+        $districtpdrr->year = $request->year;
+        //get the file and store the file and then get the http path and store it in the database
+        $districtpdrr->profile_image = $request->file('image')->store('districts');        
+        $districtpdrr->save();
+
+        return back();
     }
 
     /**
@@ -60,8 +69,10 @@ class DistrictPDRRController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(DistrictPDRR $districtPDRR)
+    public function destroy(District $district, DistrictPDRR $pdrr)
     {
         //
+        $pdrr->delete();
+        return back();
     }
 }
