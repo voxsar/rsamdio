@@ -9,7 +9,7 @@
                 </div>
             </div>
         </div>
-		<form action="{{route('reports.cp.store', $report)}}" method="post">
+		<form action="{{route('reports.cp.store', $report)}}" method="post" enctype="multipart/form-data">
 			@csrf()
 			<div class="card">
 				<div class="card-header">

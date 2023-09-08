@@ -45,14 +45,14 @@
                                         <td>{{$report->total_other_service_projects}}</td>-->
                                         <td><a target='_blank' href="{{$report->district_newsletter_link}}">View Newsletter</a></td>
                                         <td>
-                                            <a href="{{route('reports.show', $report->id)}}" class="btn btn-primary btn-sm mt-2">Add District Projects</a><br/>
-                                            <a href="{{route('reports.show', $report->id)}}" class="btn btn-primary btn-sm mt-2">Add Club Projects</a><br/>
-                                            <a href="{{route('reports.show', $report->id)}}" class="btn btn-primary btn-sm mt-2">View</a>
-                                            <a href="{{route('reports.edit', $report->id)}}" class="btn btn-warning btn-sm mt-2">Edit</a>
-                                            <form action="{{route('reports.destroy', $report)}}" method="POST" style="display:inline-block">
+                                            <a href="{{route('reports.dp.create', $report)}}" class="btn w-100 btn-primary btn-sm mt-2">Add District Projects</a><br/>
+                                            <a href="{{route('reports.cp.create', $report)}}" class="btn w-100 btn-primary btn-sm mt-2">Add Club Projects</a><br/>
+                                            <a href="{{route('reports.show', $report)}}" class="btn w-auto btn-primary btn-sm mt-2">View</a>
+                                            <a href="{{route('reports.edit', $report)}}" class="btn w-auto btn-warning btn-sm mt-2">Edit</a>
+                                            <form action="{{route('reports.destroy', $report)}}" class="w-33" method="POST" style="display:inline-block">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm  mt-2">Delete</button>
+                                                <button type="submit" class="btn w-100 btn-danger btn-sm  mt-2">Delete</button>
                                             </form>
                                         </td>
                                     </tr>

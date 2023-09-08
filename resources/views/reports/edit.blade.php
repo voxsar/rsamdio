@@ -126,7 +126,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($report->clubProjects as $project)
+                                    @forelse ($report->clubprojects as $project)
                                         <tr>
                                             <td>{{$project->avenue_of_service}}</td>
                                             <td>{{$project->area_of_focus}}</td>
@@ -137,6 +137,15 @@
                                     @empty
                                     @endforelse
                                 </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td class='text-end'>Total:</td>
+                                        <td>{{$report->clubprojects->sum('income')}}</td>
+                                        <td>{{$report->clubprojects->sum('expense')}}</td>
+                                    </tr>
+                                </tfoot>
                             </table>
 						</div>
 					</div>
@@ -168,7 +177,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse ($report->clubProjects as $project)
+                                    @forelse ($report->districtprojects as $project)
                                         <tr>
                                             <td>{{$project->avenue_of_service}}</td>
                                             <td>{{$project->area_of_focus}}</td>
@@ -179,6 +188,15 @@
                                     @empty
                                     @endforelse
                                 </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td class='text-end'>Total:</td>
+                                        <td>{{$report->districtprojects->sum('income')}}</td>
+                                        <td>{{$report->districtprojects->sum('expense')}}</td>
+                                    </tr>
+                                </tfoot>
                             </table>
 						</div>
 					</div>

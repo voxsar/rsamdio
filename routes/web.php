@@ -22,6 +22,7 @@ Route::redirect('/', 'districts');
 
 //group middleware auth verified function
 Route::middleware(['auth', 'verified'])->group(function () {
+    Route::redirect('dashboard', 'districts');
     Route::get('profile', [App\Http\Controllers\DistrictController::class, 'profile'])->name('profile');
 
     Route::post('profile', [App\Http\Controllers\DistrictController::class, 'profileupdate'])->name('profile.district');
@@ -35,9 +36,12 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('reports.cp', App\Http\Controllers\QuarterlyReportCPController::class);
 });
 
+
+
+/*
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');*/
 
 Route::middleware('auth')->group(function () {
     /*Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

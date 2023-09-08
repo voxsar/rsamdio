@@ -41,7 +41,17 @@ class QuarterlyReportCPController extends Controller
         $cp->income = $request->income;
         $cp->expense = $request->expense;
         $cp->save();
-        return back();
+
+        //check project_images exists and array then loop and store
+        if ($request->hasFile('project_images')) {
+            foreach ($request->file('project_images') as $image) {
+                $image->store('public/project_images');
+                $cp->project_images = [
+                    'image' => $image->hashName(),
+                ];
+            }
+        }
+        return redirect()->route('reports.edit', $report);
     }
 
     /**
@@ -74,7 +84,17 @@ class QuarterlyReportCPController extends Controller
         $cp->income = $request->income;
         $cp->expense = $request->expense;
         $cp->save();
-        return back();
+
+        //check project_images exists and array then loop and store
+        if ($request->hasFile('project_images')) {
+            foreach ($request->file('project_images') as $image) {
+                $image->store('public/project_images');
+                $cp->project_images = [
+                    'image' => $image->hashName(),
+                ];
+            }
+        }
+        return redirect()->route('reports.edit', $report);
     }
 
     /**
